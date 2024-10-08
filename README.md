@@ -8,7 +8,7 @@
 1. Klonujeme repozitář do svého počítače:
 
 
-   git clone https://github.com/uzivatel/jmeno-projektu.git
+   git clone https://github.com/FilipDlouhy/Krypto1.git
    cd jmeno-projektu
    npm i 
 
