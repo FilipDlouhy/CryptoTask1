@@ -54,7 +54,11 @@ const App = () => {
       exportPub: "Exportovat veřejný klíč",
       selectZip: "Vybrat ZIP s podepsaným souborem",
       selectPubKey: "Vybrat veřejný klíč (.pub)",
-      countHash:"Spočítat hash"
+      countHash:"Spočítat hash",
+      resultOfCheck:"Výsledek ověření:",
+      verification:"Ověření podpisu",
+      verificationSuccess: "Podpis je platný.", 
+      verificationFailure: "Podpis není platný.",
     },
     en: {
       cs: "Czech",
@@ -80,7 +84,11 @@ const App = () => {
       exportPub: "Export Public Key",
       selectZip: "Select ZIP with signed file",
       selectPubKey: "Select public key (.pub)",
-      countHash:"Calculate  hash"
+      countHash:"Calculate  hash",
+      resultOfCheck:"Result of check:",
+      verification:"Verification of signature",
+      verificationSuccess: "The signature is valid.", 
+      verificationFailure: "The signature is not valid."
     },
   };
 
@@ -370,9 +378,9 @@ const App = () => {
     let overenyHashHex = overenyHashBigInt.toString(16).replace(/^0+/, "");
   
     if (overenyHashHex === prepocitanyHash) {
-      setVysledekOvereni("Podpis je platný.");
+      setVysledekOvereni(texty[jazyk].verificationSuccess); 
     } else {
-      setVysledekOvereni("Podpis není platný.");
+      setVysledekOvereni(texty[jazyk].verificationFailure);
     }
   };
   
@@ -511,7 +519,7 @@ const App = () => {
 
         <hr className="my-8" />
 
-        <h2 className="text-xl font-semibold mb-4">Ověření podpisu</h2>
+        <h2 className="text-xl font-semibold mb-4"> {texty[jazyk].verification}</h2>
         <label className="block mb-4">
           {texty[jazyk].selectZip}:
           <input
@@ -538,7 +546,7 @@ const App = () => {
 
         {vysledekOvereni && (
           <div className="mb-4">
-            <strong>Výsledek ověření:</strong> {vysledekOvereni}
+            <strong>{texty[jazyk].resultOfCheck}</strong> {vysledekOvereni}
           </div>
         )}
 
