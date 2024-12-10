@@ -54,6 +54,7 @@ const App = () => {
       exportPub: "Exportovat veřejný klíč",
       selectZip: "Vybrat ZIP s podepsaným souborem",
       selectPubKey: "Vybrat veřejný klíč (.pub)",
+      countHash:"Spočítat hash"
     },
     en: {
       cs: "Czech",
@@ -79,6 +80,7 @@ const App = () => {
       exportPub: "Export Public Key",
       selectZip: "Select ZIP with signed file",
       selectPubKey: "Select public key (.pub)",
+      countHash:"Spočítat hash"
     },
   };
 
@@ -491,7 +493,7 @@ const App = () => {
           onClick={spocitejHashSouboru}
           className="w-full bg-blue-500 text-white px-4 py-2 rounded mb-4 hover:bg-blue-600"
         >
-          Spočítat hash
+            {texty[jazyk].countHash}
         </button>
 
         {hashSouboru && (
