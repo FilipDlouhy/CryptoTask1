@@ -80,7 +80,7 @@ const App = () => {
       exportPub: "Export Public Key",
       selectZip: "Select ZIP with signed file",
       selectPubKey: "Select public key (.pub)",
-      countHash:"Spočítat hash"
+      countHash:"Calculate  hash"
     },
   };
 
